@@ -1,9 +1,15 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.openqa.selenium.WebDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.ReportListener;
+
+
+
+@Listeners(utils.ReportListener.class) // this connects TsetNG  + Allure +Extent 
 public class FirstTestCase {
 
     @Test
@@ -31,3 +37,4 @@ public class FirstTestCase {
         driver.quit();
     }
 }
+
